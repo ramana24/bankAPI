@@ -1,0 +1,93 @@
+### creating all the details using many to many association
+### Read 
+send Request
+GET http://localhost:4004/executive/Banks HTTP/1.1\
+Authorization: Basic YWRtaW46
+
+### Create
+
+send Request
+POST http://localhost:4004/executive/Banks HTTP/1.1 
+Content-Type: application/json
+Authorization: Basic YWRtaW46 
+
+{ 
+    "bankID": 117,
+    "bankname": "Mahendra Bank",
+    "state_ID" : 401,
+    "city_ID" : 502,
+    "customers" : [
+        {
+        "custID" : 230,
+        "firstname" : "Dhnees",
+        "lastname" : "naaraj",
+        "address" : "asff Street",
+        "state_ID" : 401,
+        "city_ID" : 502,
+        "accounts" : [            
+            {
+                "accountid" : 1000000000000800,
+                "Balance" : 45,
+                "account_status" : "Active",
+                "account_type" : "Savings",
+                "transections" : [
+                    {
+                        "type" : "Deposit",
+                        "description" : "Check Deposit",
+                        "amount" : 45
+                    }
+                ]
+            },
+            {
+                "accountid" : 1000000000000900,
+                "Balance" : 45,
+                "account_status" : "Active",
+                "account_type" : "Current",
+                "transections" : [
+                    {
+                        "type" : "withdraw",
+                        "description" : "Check Deposit",
+                        "amount" : 45
+                    }
+                ]
+            }
+        ]
+        },
+        {
+        "custID" : 231,
+        "firstname" : "Dhaneesha",
+        "lastname" : "narayanaraj",
+        "address" : "Kuppaiah Street",
+        "state_ID" : 401,
+        "city_ID" : 502,
+        "accounts" : [            
+            {
+                "accountid" : 1000000000001100,
+                "Balance" : 45,
+                "account_status" : "Active",
+                "account_type" : "Savings",
+                "transections" : [
+                    {
+                        "type" : "Deposit",
+                        "description" : "Check Deposit",
+                        "amount" : 45
+                    }
+                ]
+            },
+            {
+                "accountid" : 1000000000001200,
+                "Balance" : 45,
+                "account_status" : "Active",
+                "account_type" : "Current",
+                "transections" : [
+                    {
+                        "type" : "withdraw",
+                        "description" : "Check Deposit",
+                        "amount" : 45
+                    }
+                ]
+            }
+        ]
+        }
+    ] 
+}
